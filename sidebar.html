@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar</title>
+    <title>Sidebar Control</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
@@ -24,9 +24,11 @@
                 </button>
             </div>
 
-            <ul class="flex">
-                <li><a href="index.html">Home</a></li>
-            </ul>
+            <div class="flex items-center justify-between w-full">
+                <a href="index.html">Home</a>
+                <h2 class="text-2xl">Sidebar Control</h2>
+                <div></div>
+            </div>
 
             <div class="absolute top-0 left-0 bg-white border border-right h-full w-48" x-show="isOpen"
                 @click.away="isOpen = false" x-transition:enter="transition ease-out duration-300 -ml-64"

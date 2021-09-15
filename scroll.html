@@ -14,16 +14,16 @@
 <body class="bg-gray-200">
     <header class="border-t-4 border-blue-700 bg-white shadow-md fixed w-full">
         <nav class="container mx-auto px-4 flex items-center justify-between py-4">
-            <ul class="flex">
-                <li><a href="index.html">Home</a></li>
-            </ul>
+            <a href="index.html">Home</a>
+            <h2 class="text-2xl">Scroll Detection</h2>
+            <div></div>
         </nav>
     </header>
 
     <div class="pt-14" x-data="{ atTop: true }">
         <nav class="p-4 w-full text-center fixed " :class="{ 'bg-white shadow-md': !atTop }"
             @scroll.window="atTop = (window.pageYOffset > 40) ? false : true">
-            <h2 class="text-2xl">Top Nav: Scroll Detection (scroll the page)</h2>
+            <h2 class="text-2xl">Fixed Title Line (scroll the page)</h2>
         </nav>
 
         <div class="container mx-auto p-4 pt-20 container mx-auto">
