@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="bg-gray-300">
+    <header class="border-t-4 border-blue-700 bg-white shadow-md">
+        <nav class="container mx-auto px-4 flex items-center justify-between py-4">
+            <ul class="flex">
+                <li><a href="\">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mx-auto px-4 xl:px-64 mt-12 mb-12">
+        <h2 class="text-2xl font-bold">Modal</h2>
+
+        <div x-data="{ isOpen: false }">
+            <button class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded"
+                @click="isOpen = true; $nextTick(() => $refs.modalCloseButton.focus());">
+                Open Modal
+            </button>
+
+            <div style="background-color: rgba(0,0,0,.5);" x-show="isOpen" x-transition.opacity.duration.300ms
+                class="mx-auto absolute top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
+
+                <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
+                    <div class="bg-white rounded px-8 py-8" @click.away="isOpen = false">
+                        <h1 class="font-bold text-2xl mb-3">Modal Title</h1>
+                        <div class="">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse iste, illo iusto nostrum
+                                quas aut natus, impedit corrupti ipsum provident quos? Tempore debitis reprehenderit,
+                                ipsam, architecto provident vel ad impedit doloribus harum repellat mollitia quas
+                                aliquid vitae! Iure deleniti enim repellendus quos quas ad quaerat, eum architecto
+                                expedita mollitia repudiandae qui nulla provident veritatis ducimus nihil delectus
+                                omnis! Deserunt ex aliquam facere? Distinctio, voluptate corporis!</p>
+                            <div class="mt-4">
+                                <button class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded focus:ring-2"
+                                    @click="isOpen=false" x-ref="modalCloseButton">
+                                    Close Modal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
